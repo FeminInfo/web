@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+
+<head>
+<title>FeminInfo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" src="FeminInfo2.js"></script>
+<script type="text/javascript" src="quiz-1.js"></script>
+ 
+ 
+ 
+ 
+ <style type="text/css">
+ 
+ 
+        .ui-page
+        {
+            background-color:#F6A2E2;
+            background-size:cover;
+        }
+        h1{
+            font-weight:bold;
+            color:#9999FF;
+            font-size: 80;
+            margin: 10px;
+            padding: 5px;
+            text-transform: uppercase;
+        }
+        h2 {
+            font-weight:bold;
+            color:#FFFFFF;
+            font-size: 50;
+            margin: 10px;
+            padding: 50px;
+            text-transform: uppercase;
+        }
+        body{
+            font-family: Optima,Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif;
+            text-transform: uppercase;
+        }
+        .ui-btn ui-btn-inline {
+            font-family: Optima,Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif;
+        }
+        #box{
+            margin: 40px;
+            padding: 20px;
+            background-color:#9999FF;
+            color: #FFFFFF;
+        }
+    
+        .round-button {
+            width:80%;
+        }
+        .round-button-circle {
+            width: 100%;
+            height:0;
+            padding-bottom: 100%;
+            border-radius: 50%;
+            border:7px solid #FFFFFF;
+            overflow:hidden;
+            box-shadow: 0 0 3px white;
+        }
+     
+        .round-button-circle.nutrition{
+        background-image: url(carrot.png);
+     
+        }
+     
+        .nutrition{
+        background-image: url(carrot.png);
+     
+        }
+      
+        .period{
+         background-image: url(tampon.png);
+        }
+   
+   
+   		.substanceawareness{
+   		background-image: url(beer.jpg);
+   		}
+   		
+   		.sex{
+   		background-image: url(condom.png);
+   		}
+        
+        .healthyrelations{
+        background-image: url(love.png);
+        }
+        
+        .mentalhealth{
+        background-image: url(brain.jpg);
+        }
+        
+        
+        .round-button-circle:hover {
+            background:#FFFFFF;
+            color: #F6A2E2
+        }
+        .round-button a {
+            display:block;
+            float:left;
+            width:100%;
+            padding-top:50%;
+            padding-bottom:50%;
+            line-height:1em;
+            margin-top:-0.5em;
+ 
+            text-align:center;
+            color:#FFFFFF;
+            font-family:Verdana;
+            font-size:1 em;
+            font-weight:bold;
+            text-decoration:none;
+        }
+      
+        .subtext{
+        color: #FFFFFF
+        }
+
+
+.answers li {
+list-style: upper-alpha;
+}
+
+label {
+margin-left: 0.5em;
+cursor: pointer;
+}
+
+#results {
+background: #dddada;
+color: 000000;
+padding: 3px;
+text-align: center;
+width: 200px;
+cursor: pointer;
+border: 1px solid gray;
+}
+
+#results:hover {
+background: #3d91b8;
+color: #ffffff;
+padding: 3px;
+text-align: center;
+width: 200px;
+cursor: pointer;
+border: 1px solid gray;
+}
+
+#categorylist {
+margin-top: 6px;
+display: none;
+}
+
+#category1, #category2, #category3, #category4, #category5, #category11 {
+display: none;
+}
+
+#closing {
+display: none;
+font-style: italic;
+}
+
+        </style>
+   
+    </head>
+ 
+    <body>
+   
+   
+       <!-- Cover Page -->
+       <div data-role="page" id="cover">
+            <br><br><br>
+            <center>
+            <div class="box"><center><img id="photo" src="logo2.png" alt="Logo"/>
+                <p id="subtext">A Go-To Guide for Educating Young Women About Health</p>
+            </div></center>       
+            <br> <br> <br>
+            <center>
+             <div style="height:400px;width:400px;background-color:#F6A2E2">
+            <div class="round-button"><div class="round-button-circle"><a href="#home" class="round-button">Enter Site</a></div></div>
+               </div>
+            </center>
+        </div>
+   
+   
+   
+        <!-- Home Page -->
+    <div data-role="page" id="home">
+       <!-- /navbar -->
+ 
+ <div class="box"><center><img id="photo" src="logo2.png" alt="Logo"/>
+                <p id="subtext">A Go-To Guide for Educating Young Women About Health</p>
+            </div></center>       
+ 
+<div class="ui-grid-a"><br> <br>
+  <div class="ui-block-a"><div class="round-button"><div class="round-button-circle period"><a href="#periods" class="round-button" >Periods</a></div></div></div>
+  <div class="ui-block-b"><div class="round-button"><div class="round-button-circle nutrition"><a href="#nutrition" class="round-button">Nutrition</a></div></div></div>
+</div>
+<div class="ui-grid-a"><br> <br>
+<div class="ui-block-a"> <div class="round-button"><div class="round-button-circle substanceawareness"><a href="#substanceawareness" class="round-button">Substance Awareness</a></div></div></div>
+<div class="ui-block-b"> <div class="round-button"><div class="round-button-circle sex"><a href="#sex" class="round-button">Sex</a></div></div></div>
+</div>
+<div class="ui-grid-a"><br> <br>
+  <div class="ui-block-a"> <div class="round-button"><div class="round-button-circle healthyrelations"><a href="#healthyrelations" class="round-button">Healthy Relations</a></div></div></div>
+  <div class="ui-block-b"><div class="round-button"><div class="round-button-circle mentalhealth"><a href="#mentalhealth" class="round-button">Mental Health</a></div></div></div>
+</div>
+<br> <br>
+<div data-role="footer">
+<div data-role="navbar">
+            <ul>
+                <li><a href="#home" class="ui-btn-active">Home</a></li>
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#aboutus">About Us</a></li>
+            </ul>
+            </div>
+        </div>
+</center>
+ </div>
+   
+   
+   
+   
+ 
+ 
+   <!-- Mission Page -->
+        <div data-role="page" id="mission">
+ 
+    
+            <center>
+            <div class="box"><center><img id="photo" src="logo2.png" alt="Logo"/>
+                <p id="subtext">A Go-To Guide for Educating Young Women About Health</p>
+            </div></center>
+            
+            <center><div id="box" style="height:225px;width:60%;">
+            <p> We strive to empower young women to care for their mental and physical health by providing them a private setting to view information, eliminating the stigma associated with feminine issues. </p>
+            </div></center>
+   
+<div data-role="footer">
+<div data-role="navbar">
+            <ul>
+                <li><a href="#home" class="ui-btn-active">Home</a></li>
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#aboutus">About Us</a></li>
+            </ul>
+            </div>
+        </div>
+   
+      </div>
+       
+    
+    <!-- About Us Page -->
+         <div data-role="page" id="aboutus">
+         
+         
+ 		<center>
+            <div class="box"><center><img id="photo" src="logo2.png" alt="Logo"/>
+                <p id="subtext">A Go-To Guide for Educating Young Women About Health</p>
+        </div></center>
+                
+<center><div id="box" style="height:400px;width:70%;background-color:#9999FF">
+	<center><p>Why FeminInfo?<p></center>
+	<p>When deciding what we wish existed in the world, we decided an accessible women's health app was just that. 
+	We wanted to apply our knowledge of JavaScript, HTML, and CSS to more complex programming, and in doing so created a mobile website. We hope you enjoy!
+	Email us with feedback or questions at <a href> femininfotracker@gmail.com</a></p>
+</div></center>
+     
+<center>
+<div id="box" style="height:700px;width:70%;background-color:#9999FF">
+<center><p>Meet the creators!</p></center>
+<center><img id="photo" src="lexie.png" alt="us" style="height:250px;width:220px;"/></center>
+<center><p>Lexie Polevoi, Age 17, The Branson School </center>
+<center><img id="photo" src="lucy.jpg" alt="us" style="height:250px;width:220px;"/></center>
+<center><p>Lucy Matz, Age 17, San Francisco University High School</p></center>
+</div></center>
+
+
+        
+           
+        <div data-role="footer">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" class="ui-btn-active">Home</a></li>
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#aboutus">About Us</a></li>
+            </ul>
+            </div>
+        </div>
+        </div>
+
+   
+   
+ <!-- Period Page -->
+ <div data-role="page" id="periods">
+ <h1>Periods</h1>
+ <h2 id="periodQuotes"></h2>
+<center> <a href="#home" class="ui-btn ui-btn-inline" style=color:#9999FF;">Back to Home</a> </center>
+<center> <a href="#pQuiz" class="ui-btn ui-btn-inline" style=color:#9999FF;">Test Yourself!</a> </center>
+ </div>
+ 
+ <!-- Period Quiz Page -->
+ <div data-role="page" id="pQuiz">
+ 	<div id="box">
+ 	<p class="question">1. What is the answer to this question?</p>        
+
+	<ul class="answers">            
+	<input type="radio" name="q1" value="a" id="q1a"><label for="q1a">Answer 1</label><br/>          
+	<input type="radio" name="q1" value="b" id="q1b"><label for="q1b">Answer 2</label><br/>            
+	<input type="radio" name="q1" value="c" id="q1c"><label for="q1c">Answer 3</label><br/>            
+	<input type="radio" name="q1" value="d" id="q1d"><label for="q1d">Answer 4</label><br/>       
+	</ul>        
+
+
+	<p class="question">2. What is the answer to this question?</p>        
+
+	<ul class="answers">            
+	<input type="radio" name="q2" value="a" id="q2a"><label for="q2a">Answer 1</label><br/>           
+	<input type="radio" name="q2" value="b" id="q2b"><label for="q2b">Answer 2</label><br/>            
+	<input type="radio" name="q2" value="c" id="q2c"><label for="q2c">Answer 3</label><br/>           
+	<input type="radio" name="q2" value="d" id="q2d"><label for="q2d">Answer 4</label><br/>       
+	</ul>        
+
+	<p class="question">3. What is the answer to this question?</p>        
+
+	<ul class="answers">            
+	<input type="radio" name="q3" value="a" id="q3a"><label for="q3a">Answer 1</label><br/>            
+	<input type="radio" name="q3" value="b" id="q3b"><label for="q3b">Answer 2</label><br/>            
+	<input type="radio" name="q3" value="c" id="q3c"><label for="q3c">Answer 3</label><br/>           
+	<input type="radio" name="q3" value="d" id="q3d"><label for="q3d">Answer 4</label><br/>       
+	</ul>        
+
+
+ 	<div id="results">
+	Show me the answers!
+	</div> 
+
+
+	<div id="category1">            
+	<p>              
+	<strong>Question 1:</strong> The correct answer is <strong>Answer 1</strong>.</p>        
+	</div>        
+
+	<div id="category2">            
+	<p>              
+	<strong>Question 2:</strong> The correct answer is <strong>Answer 2</strong>.</p>        
+	</div>        
+
+	<div id="category3">            
+	<p>                
+	<strong>Question 3:</strong> The correct answer is <strong>Answer 3</strong>.</p>        
+	</div>        
+
+
+	<div id="category11">            
+	<p>                
+	You answered them all right!</p>        
+	</div>	
+ 	</div>
+ 
+ <center> <a href="#periods" class="ui-btn ui-btn-inline" style=color:#9999FF;">Back</a> </center>
+ </div>
+
+ <!-- Nutrition Page -->
+ <div data-role="page" id="nutrition">
+  <h1>Nutrition</h1>
+  <h2 id="nutritionQuotes"></h2>
+  <center><a href="#home" class="ui-btn ui-btn-inline" style=color:#9999FF;">Back to Home</a></center>
+   <center><a href="#nQuiz" class="ui-btn ui-btn-inline" style=color:#9999FF;">Test Yourself!</a></center>
+ </div>
+ 
+ <!-- Nutrition Quiz Page -->
+  <div data-role="page" id="nQuiz">
+ <div id="box">
+ 	<p class="question">1. What is the answer to this question?</p>        
+
+	<ul class="answers">            
+	<input type="radio" name="q1" value="a" id="q1a"><label for="q1a">Answer 1</label><br/>          
+	<input type="radio" name="q1" value="b" id="q1b"><label for="q1b">Answer 2</label><br/>            
+	<input type="radio" name="q1" value="c" id="q1c"><label for="q1c">Answer 3</label><br/>            
+	<input type="radio" name="q1" value="d" id="q1d"><label for="q1d">Answer 4</label><br/>       
+	</ul>        
+
+
+	<p class="question">2. What is the answer to this question?</p>        
+
+	<ul class="answers">            
+	<input type="radio" name="q2" value="a" id="q2a"><label for="q2a">Answer 1</label><br/>           
+	<input type="radio" name="q2" value="b" id="q2b"><label for="q2b">Answer 2</label><br/>            
+	<input type="radio" name="q2" value="c" id="q2c"><label for="q2c">Answer 3</label><br/>           
+	<input type="radio" name="q2" value="d" id="q2d"><label for="q2d">Answer 4</label><br/>       
+	</ul>        
+
+	<p class="question">3. What is the answer to this question?</p>        
+
+	<ul class="answers">            
+	<input type="radio" name="q3" value="a" id="q3a"><label for="q3a">Answer 1</label><br/>            
+	<input type="radio" name="q3" value="b" id="q3b"><label for="q3b">Answer 2</label><br/>            
+	<input type="radio" name="q3" value="c" id="q3c"><label for="q3c">Answer 3</label><br/>           
+	<input type="radio" name="q3" value="d" id="q3d"><label for="q3d">Answer 4</label><br/>       
+	</ul>        
+
+
+ 	<div id="results">
+	Show me the answers!
+	</div> 
+
+
+	<div id="category1">            
+	<p>              
+	<strong>Question 1:</strong> The correct answer is <strong>Answer 1</strong>.</p>        
+	</div>        
+
+	<div id="category2">            
+	<p>              
+	<strong>Question 2:</strong> The correct answer is <strong>Answer 2</strong>.</p>        
+	</div>        
+
+	<div id="category3">            
+	<p>                
+	<strong>Question 3:</strong> The correct answer is <strong>Answer 3</strong>.</p>        
+	</div>        
+
+
+	<div id="category11">            
+	<p>                
+	You answered them all right!</p>        
+	</div>	
+ 	</div>
+ 
+ <center> <a href="#nutrition" class="ui-btn ui-btn-inline" style=color:#9999FF;">Back</a> </center>
+ </div>
+ 
+ 
+  <!-- Substance Awareness Page -->
+ <div data-role="page" id="substanceawareness">
+ <h1>Substance Awareness</h1>
+ <center><a href="#home" class="ui-btn ui-btn-inline" style=color:#9999FF;">Back to Home</a></center>
+ <center><a href="#saQuiz" class="ui-btn ui-btn-inline" style=color:#9999FF;">Test Yourself!</a></center>
+ </div>
+ 
+ 
+  <!-- Substance Awareness Quiz Page -->
+  <div data-role="page" id="saQuiz">
+ 	<div id="box">
+ 	<p class="question">1. What is the answer to this question?</p>        
+
+	<ul class="answers">            
+	<input type="radio" name="q1" value="a" id="q1a"><label for="q1a">Answer 1</label><br/>          
+	<input type="radio" name="q1" value="b" id="q1b"><label for="q1b">Answer 2</label><br/>            
+	<input type="radio" name="q1" value="c" id="q1c"><label for="q1c">Answer 3</label><br/>            
+	<input type="radio" name="q1" value="d" id="q1d"><label for="q1d">Answer 4</label><br/>       
+	</ul>        
+
+
+	<p class="question">2. What is the answer to this question?</p>        
+
+	<ul class="answers">            
+	<input type="radio" name="q2" value="a" id="q2a"><label for="q2a">Answer 1</label><br/>           
+	<input type="radio" name="q2" value="b" id="q2b"><label for="q2b">Answer 2</label><br/>            
+	<input type="radio" name="q2" value="c" id="q2c"><label for="q2c">Answer 3</label><br/>           
+	<input type="radio" name="q2" value="d" id="q2d"><label for="q2d">Answer 4</label><br/>       
+	</ul>        
+
+	<p class="question">3. What is the answer to this question?</p>        
+
+	<ul class="answers">            
+	<input type="radio" name="q3" value="a" id="q3a"><label for="q3a">Answer 1</label><br/>            
+	<input type="radio" name="q3" value="b" id="q3b"><label for="q3b">Answer 2</label><br/>            
+	<input type="radio" name="q3" value="c" id="q3c"><label for="q3c">Answer 3</label><br/>           
+	<input type="radio" name="q3" value="d" id="q3d"><label for="q3d">Answer 4</label><br/>       
+	</ul>        
+
+
+ 	<div id="results">
+	Show me the answers!
+	</div> 
+
+
+	<div id="category1">            
+	<p>              
+	<strong>Question 1:</strong> The correct answer is <strong>Answer 1</strong>.</p>        
+	</div>        
+
+	<div id="category2">            
+	<p>              
+	<strong>Question 2:</strong> The correct answer is <strong>Answer 2</strong>.</p>        
+	</div>        
+
+	<div id="category3">            
+	<p>                
+	<strong>Question 3:</strong> The correct answer is <strong>Answer 3</strong>.</p>        
+	</div>        
+
+
+	<div id="category11">            
+	<p>                
+	You answered them all right!</p>        
+	</div>	
+ 	</div>
+ 
+ <center> <a href="#substanceawareness" class="ui-btn ui-btn-inline" style=color:#9999FF;">Back</a> </center>
+ </div>
+ 
+ 
+ 
+ 
+  <!-- Sex Page -->
+ <div data-role="page" id="sex">
+  <h1>Sex</h1>
+  <h2 id="sexQuotes"></h2>
+  <center><a href="#home" class="ui-btn ui-btn-inline" style=color:#9999FF;">Back to Home</a></center>
+  <center><a href="#sQuiz" class="ui-btn ui-btn-inline" style=color:#9999FF;">Test Yourself!</a></center>
+  <center><a href="#bst" class="ui-btn ui-btn-inline" style=color:#9999FF;">#BetterSexTalk</a></center>
+ </div>
+ 
+  <!-- Sex Quiz Page -->
+ <div data-role="page" id="sQuiz">
+ 	<div id="box">
+ 	<p class="question">1. What is the answer to this question?</p>        
+
+	<ul class="answers">            
+	<input type="radio" name="q1" value="a" id="q1a"><label for="q1a">Answer 1</label><br/>          
+	<input type="radio" name="q1" value="b" id="q1b"><label for="q1b">Answer 2</label><br/>            
+	<input type="radio" name="q1" value="c" id="q1c"><label for="q1c">Answer 3</label><br/>            
+	<input type="radio" name="q1" value="d" id="q1d"><label for="q1d">Answer 4</label><br/>       
+	</ul>        
+
+
+	<p class="question">2. What is the answer to this question?</p>        
+
+	<ul class="answers">            
+	<input type="radio" name="q2" value="a" id="q2a"><label for="q2a">Answer 1</label><br/>           
+	<input type="radio" name="q2" value="b" id="q2b"><label for="q2b">Answer 2</label><br/>            
+	<input type="radio" name="q2" value="c" id="q2c"><label for="q2c">Answer 3</label><br/>           
+	<input type="radio" name="q2" value="d" id="q2d"><label for="q2d">Answer 4</label><br/>       
+	</ul>        
+
+	<p class="question">3. What is the answer to this question?</p>        
+
+	<ul class="answers">            
+	<input type="radio" name="q3" value="a" id="q3a"><label for="q3a">Answer 1</label><br/>            
+	<input type="radio" name="q3" value="b" id="q3b"><label for="q3b">Answer 2</label><br/>            
+	<input type="radio" name="q3" value="c" id="q3c"><label for="q3c">Answer 3</label><br/>           
+	<input type="radio" name="q3" value="d" id="q3d"><label for="q3d">Answer 4</label><br/>       
+	</ul>        
+
+
+ 	<div id="results">
+	Show me the answers!
+	</div> 
+
+
+	<div id="category1">            
+	<p>              
+	<strong>Question 1:</strong> The correct answer is <strong>Answer 1</strong>.</p>        
+	</div>        
+
+	<div id="category2">            
+	<p>              
+	<strong>Question 2:</strong> The correct answer is <strong>Answer 2</strong>.</p>        
+	</div>        
+
+	<div id="category3">            
+	<p>                
+	<strong>Question 3:</strong> The correct answer is <strong>Answer 3</strong>.</p>        
+	</div>        
+
+
+	<div id="category11">            
+	<p>                
+	You answered them all right!</p>        
+	</div>	
+ 	</div>
+ 
+ <center> <a href="#sex" class="ui-btn ui-btn-inline" style=color:#9999FF;">Back</a> </center>
+ </div>
+ 
+ <!-- #BetterSexTalk Page -->
+  <div data-role="page" id="bst">
+  </div>
+ 
+ 
+  <!-- Healthy Relations Page -->
+ <div data-role="page" id="healthyrelations">
+  <h1>Healthy Relations</h1>
+  <h2 id="relationsQuotes"></h2>
+  <center><a href="#home" class="ui-btn ui-btn-inline" style=color:#9999FF;">Back to Home</a></center>
+  <center><a href="#hQuiz" class="ui-btn ui-btn-inline" style=color:#9999FF;">Test Yourself!</a></center>
+ </div>
+ 
+ 
+  <!-- Healthy Relations Quiz Page -->
+ <div data-role="page" id="hQuiz">
+ 	<div id="box">
+ 	<p class="question">1. What is the answer to this question?</p>        
+
+	<ul class="answers">            
+	<input type="radio" name="q1" value="a" id="q1a"><label for="q1a">Answer 1</label><br/>          
+	<input type="radio" name="q1" value="b" id="q1b"><label for="q1b">Answer 2</label><br/>            
+	<input type="radio" name="q1" value="c" id="q1c"><label for="q1c">Answer 3</label><br/>            
+	<input type="radio" name="q1" value="d" id="q1d"><label for="q1d">Answer 4</label><br/>       
+	</ul>        
+
+
+	<p class="question">2. What is the answer to this question?</p>        
+
+	<ul class="answers">            
+	<input type="radio" name="q2" value="a" id="q2a"><label for="q2a">Answer 1</label><br/>           
+	<input type="radio" name="q2" value="b" id="q2b"><label for="q2b">Answer 2</label><br/>            
+	<input type="radio" name="q2" value="c" id="q2c"><label for="q2c">Answer 3</label><br/>           
+	<input type="radio" name="q2" value="d" id="q2d"><label for="q2d">Answer 4</label><br/>       
+	</ul>        
+
+	<p class="question">3. What is the answer to this question?</p>        
+
+	<ul class="answers">            
+	<input type="radio" name="q3" value="a" id="q3a"><label for="q3a">Answer 1</label><br/>            
+	<input type="radio" name="q3" value="b" id="q3b"><label for="q3b">Answer 2</label><br/>            
+	<input type="radio" name="q3" value="c" id="q3c"><label for="q3c">Answer 3</label><br/>           
+	<input type="radio" name="q3" value="d" id="q3d"><label for="q3d">Answer 4</label><br/>       
+	</ul>        
+
+
+ 	<div id="results">
+	Show me the answers!
+	</div> 
+
+
+	<div id="category1">            
+	<p>              
+	<strong>Question 1:</strong> The correct answer is <strong>Answer 1</strong>.</p>        
+	</div>        
+
+	<div id="category2">            
+	<p>              
+	<strong>Question 2:</strong> The correct answer is <strong>Answer 2</strong>.</p>        
+	</div>        
+
+	<div id="category3">            
+	<p>                
+	<strong>Question 3:</strong> The correct answer is <strong>Answer 3</strong>.</p>        
+	</div>        
+
+
+	<div id="category11">            
+	<p>                
+	You answered them all right!</p>        
+	</div>	
+ 	</div>
+ 
+ <center> <a href="#healthyrelations" class="ui-btn ui-btn-inline" style=color:#9999FF;">Back</a> </center>
+ </div>
+ 
+ 
+ 
+ 
+  <!-- Mental Health Page -->
+ <div data-role="page" id="mentalhealth">
+  <h1>Mental Health</h1>
+  <h2 id="mentalQuotes"></h2>
+ <center><a href="#home" class="ui-btn ui-btn-inline" style=color:#9999FF;">Back to Home </a></center>
+ <center><a href="#mQuiz" class="ui-btn ui-btn-inline" style=color:#9999FF;">Test Yourself!</a></center>
+ </div>
+   
+    <!-- Mental Health Quiz Page -->
+   <div data-role="page" id="mQuiz">
+ 	<div id="box">
+ 	<p class="question">1. What is the answer to this question?</p>        
+
+	<ul class="answers">            
+	<input type="radio" name="q1" value="a" id="q1a"><label for="q1a">Answer 1</label><br/>          
+	<input type="radio" name="q1" value="b" id="q1b"><label for="q1b">Answer 2</label><br/>            
+	<input type="radio" name="q1" value="c" id="q1c"><label for="q1c">Answer 3</label><br/>            
+	<input type="radio" name="q1" value="d" id="q1d"><label for="q1d">Answer 4</label><br/>       
+	</ul>        
+
+
+	<p class="question">2. What is the answer to this question?</p>        
+
+	<ul class="answers">            
+	<input type="radio" name="q2" value="a" id="q2a"><label for="q2a">Answer 1</label><br/>           
+	<input type="radio" name="q2" value="b" id="q2b"><label for="q2b">Answer 2</label><br/>            
+	<input type="radio" name="q2" value="c" id="q2c"><label for="q2c">Answer 3</label><br/>           
+	<input type="radio" name="q2" value="d" id="q2d"><label for="q2d">Answer 4</label><br/>       
+	</ul>        
+
+	<p class="question">3. What is the answer to this question?</p>        
+
+	<ul class="answers">            
+	<input type="radio" name="q3" value="a" id="q3a"><label for="q3a">Answer 1</label><br/>            
+	<input type="radio" name="q3" value="b" id="q3b"><label for="q3b">Answer 2</label><br/>            
+	<input type="radio" name="q3" value="c" id="q3c"><label for="q3c">Answer 3</label><br/>           
+	<input type="radio" name="q3" value="d" id="q3d"><label for="q3d">Answer 4</label><br/>       
+	</ul>        
+
+
+ 	<div id="results">
+	Show me the answers!
+	</div> 
+
+
+	<div id="category1">            
+	<p>              
+	<strong>Question 1:</strong> The correct answer is <strong>Answer 1</strong>.</p>        
+	</div>        
+
+	<div id="category2">            
+	<p>              
+	<strong>Question 2:</strong> The correct answer is <strong>Answer 2</strong>.</p>        
+	</div>        
+
+	<div id="category3">            
+	<p>                
+	<strong>Question 3:</strong> The correct answer is <strong>Answer 3</strong>.</p>        
+	</div>        
+
+
+	<div id="category11">            
+	<p>                
+	You answered them all right!</p>        
+	</div>	
+ 	</div>
+ 
+ <center> <a href="#mentalhealth" class="ui-btn ui-btn-inline" style=color:#9999FF;">Back</a> </center>
+ </div>
+ 
+ 
+ 
+<script src="quotes.js"></script>
+   
+   
+   
+   
+    </body>
+ 
+ 
+</html>
